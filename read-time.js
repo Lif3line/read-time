@@ -8,8 +8,13 @@ function estReadTime(article){
 	readSpeed = readSpeed/60; // Convert to words per second
 
 	var count = article.match(/<img/gi);
+	if(count) {                            // Catch case where count returns as null on no matches
+		readTime += count.length * imageTime;
+	}
 
-	readTime += count.length * imageTime;
+	article = article.replace(/<.*?>/gi, "");    // Remove mark up
+	article = article.replace(/&nbsp;/gi, " "); // Replace non-breaking whitespace markup with real whitespace
+
 
 	return readTime;
 }
