@@ -1,4 +1,5 @@
-/*** Take in an article as a string (plain text or HTML marked) and estimate read time either in seconds or rounded up to the next minute ***/
+/*** Take in an article as a string (plain text or HTML marked) and estimate read time either in seconds or
+     rounded up to the next minute ***/
 function estReadTime(article, inMinutes){
 	var readSpeed = 250;      // Estimated speed of reader in Words Per Minute (wpm)
 	readSpeed = readSpeed/60; // Convert to words per second
